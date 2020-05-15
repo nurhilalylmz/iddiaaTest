@@ -2,6 +2,7 @@ package page.user;
 
 import contants.user.ContantsUserInfoPage;
 import contants.user.ContantsUserPasswordPage;
+import jdk.jfr.Description;
 import methods.BaseMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -15,6 +16,7 @@ public class UserPasswordPage extends BaseMethods {
         super(driver);
     }
 
+    @Description("Şifrelerim alanında bulunan default textleri kontrol eder.")
     public UserPasswordPage controlDefaultTextMyPassword(String textDefaultChangePassword, String textDefaultMyPasswordInfo, String textDefaultCurrentPassword, String textDefaultNewPassword, String textDefaultConfirmNewPassword) {
         Assert.assertEquals(userPasswordPage.textDefaultChangePassword.getText(), textDefaultChangePassword);
         Assert.assertEquals(userPasswordPage.textDefaultChangeMyPassword.getText(), textDefaultMyPasswordInfo);
@@ -24,21 +26,25 @@ public class UserPasswordPage extends BaseMethods {
         return new UserPasswordPage(driver);
     }
 
+    @Description("Mevcut şifre alanına veri girişini sağlar.")
     public UserPasswordPage currentPasswordInputChangeValue(String inputCurrentPassword) {
         writeText(userPasswordPage.inputCurrentPassword, inputCurrentPassword);
         return new UserPasswordPage(driver);
     }
 
+    @Description("Yeni şifre alanına veri girişini sağlar.")
     public UserPasswordPage newPasswordInputChangeValue(String inputNewPassword) {
         writeText(userPasswordPage.inputNewPassword, inputNewPassword);
         return new UserPasswordPage(driver);
     }
 
+    @Description("Yeni şifre(tekrar) alanına veri girişini sağlar.")
     public UserPasswordPage confirmNewPasswordInputChangeValue(String inputConfirmNewPassword) {
         writeText(userPasswordPage.inputConfirmNewPassword, inputConfirmNewPassword);
         return new UserPasswordPage(driver);
     }
 
+    @Description("Girilen bilgileri kontrol edip, kayıt eder.")
     public UserPasswordPage clickSaveButton(String textError) {
         clickElement(userPasswordPage.buttonSave);
         waitSeconds(2);
@@ -50,11 +56,13 @@ public class UserPasswordPage extends BaseMethods {
         return new UserPasswordPage(driver);
     }
 
+    @Description("Şifre güncelleme sayfasına gidilmesini sağlar.")
     public UserPasswordPage goToChangePasswordPage() {
         clickElement(userInfoPage.textChangePassword);
         return new UserPasswordPage(driver);
     }
 
+    @Description("Çıkan pop-up'ı kapatır.")
     public UserPasswordPage closePopup() {
         clickElement(userPasswordPage.buttonClosePopup);
         return new UserPasswordPage(driver);
