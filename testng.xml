@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="IddiaaTest">
+    <test name="LoginTest">
+        <classes>
+            <class name="test.LoginTest">
+                <methods>
+                    <include name="wrongInformationTextLogin"/>
+                    <include name="emptyPhoneLogin"/>
+                    <include name="emptyPasswordLogin"/>
+                    <include name="emptyAllTextFieldsLogin"/>
+                    <include name="invalidMinPhoneNumberLogin"/>
+                    <include name="invalidMaxPhoneNumberLogin"/>
+                    <include name="invalidWithoutZeroPhoneNumberLogin"/>
+                    <include name="invalidMinPasswordLogin"/>
+                    <include name="invalidMaxPasswordLogin"/>
+                    <include name="successLogin"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+        <test name="UserTest">
+                <classes>
+                    <class name="test.user.UserInfoTest">
+                        <methods>
+                            <include name="goToProfilePage"/>
+                            <include name="controlDefaultText"/>
+                            <include name="controlPersonInfoText"/>
+                        </methods>
+                    </class>
+                    <class name="test.user.UserEditTest">
+                        <methods>
+                            <include name="allInputChangeValue"/>
+                            <include name="emptyNameInputChangeValue"/>
+                            <include name="twoLetterRuleNameInputChangeValue"/>
+                            <include name="thirtyLetterRuleNameInputChangeValue"/>
+                            <include name="specialCharacterNameInputChangeValue"/>
+                            <include name="emptySurnameInputChangeValue"/>
+                            <include name="twoLetterRuleSurnameInputChangeValue"/>
+                            <include name="thirtyLetterRuleSurnameInputChangeValue"/>
+                            <include name="specialCharacterSurnameInputChangeValue"/>
+                            <include name="invalidRuleMailInputChangeValue"/>
+                            <include name="specCharacterRuleMailInputChangeValue"/>
+                            <include name="invalidPhoneNumberInputChangeValue"/>
+                            <include name="emptyPhoneNumberInputChangeValue"/>
+                        </methods>
+                    </class>
+                    <class name="test.user.UserPasswordTest">
+                        <methods>
+                            <include name="controlDefaultValue"/>
+                            <include name="emptyPasswordInputChangeValue"/>
+                            <include name="sixLetterRuleJustNumberInputChangeValue"/>
+                            <include name="sixLetterRuleJustLetterInputValue"/>
+                            <include name="invalidCurrentPasswordInputValue"/>
+                            <include name="doNotMatchNewAndConfirmPasswordInputValue"/>
+                            <include name="allInputChangeValue"/>
+                        </methods>
+                    </class>
+                </classes>
+        </test>
+</suite>
