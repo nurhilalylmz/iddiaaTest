@@ -16,7 +16,7 @@ public class UserEditTest extends BaseTest {
                 .clickEditButton()
                 .nameInputChangeValue("Nur Hilal")
                 .surnameInputChangeValue("Öztürk")
-                .emailInputChangeValue("testhilaltestmbsm@gmail.com")
+                .emailInputChangeValue("@gmail.com")
                 .clickCheckFormSubscribe()
                 .clickSaveButton("", "");
     }
@@ -107,7 +107,7 @@ public class UserEditTest extends BaseTest {
         userEditPage = new UserEditPage(driver);
         userEditPage
                 .clickEditButton()
-                .emailInputChangeValue("testhilaltest@gmail.c")
+                .emailInputChangeValue("@gmail.c")
                 .clickSaveButton("", "Geçerli bir mail adresi giriniz");
     }
 
@@ -117,8 +117,8 @@ public class UserEditTest extends BaseTest {
         userEditPage = new UserEditPage(driver);
         userEditPage
                 .clickEditButton()
-                .emailInputChangeValue("testhılal@gmail.com")
-                .clickSaveButton("testhılal@gmail.com", "");
+                .emailInputChangeValue("@gmail.com")
+                .clickSaveButton("@gmail.com", "");
     }
 
     @Description("Numara alanına hatalı numara girilir ve kaydet butonuna tıklanır.")

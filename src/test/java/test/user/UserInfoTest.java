@@ -57,7 +57,7 @@ public class UserInfoTest extends BaseTest {
                         "Hilal",
                         "Yılmaz")
                 .controlTextContactInfo(
-                        "testhilaltest@gmail.com",
+                        "@gmail.com",
                         phone)
                 .controlTextDealerInfo(
                         "110319",

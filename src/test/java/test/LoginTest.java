@@ -19,8 +19,8 @@ public class LoginTest extends BaseTest {
     public void wrongInformationTextLogin() {
         loginPage = new LoginPage(driver);
         loginPage
-                .login("05349199918", "testhi54lal34")
-                .checkTrueLogin("05349199918", "testhi54lal34", "Telefon numarası veya şifre hatalı.", driver.getCurrentUrl());
+                .login("", "")
+                .checkTrueLogin("", "", "Telefon numarası veya şifre hatalı.", driver.getCurrentUrl());
 
     }
 
@@ -28,16 +28,16 @@ public class LoginTest extends BaseTest {
     public void emptyPhoneLogin() {
         loginPage = new LoginPage(driver);
         loginPage
-                .login("", "511365")
-                .checkTrueLogin("", "testhilal34", "Bu alanın doldurulması zorunludur.", "");
+                .login("", "")
+                .checkTrueLogin("", "", "Bu alanın doldurulması zorunludur.", "");
     }
 
     @Test
     public void emptyPasswordLogin() {
         loginPage = new LoginPage(driver);
         loginPage
-                .login("05349199918", "")
-                .checkTrueLogin("05349199918", "", "Bu alanın doldurulması zorunludur.", "");
+                .login("456", "")
+                .checkTrueLogin("4564", "", "Bu alanın doldurulması zorunludur.", "");
     }
 
     @Test
@@ -83,8 +83,8 @@ public class LoginTest extends BaseTest {
     public void invalidMinPasswordLogin() {
         loginPage = new LoginPage(driver);
         loginPage
-                .login("05349199918", "testhi")
-                .checkTrueLogin("05349199918", "testhi",
+                .login("456", "testhi")
+                .checkTrueLogin("456", "testhi",
                         "Şifre maksimum 20 minimum 6 karakter içermelidir ve en az bir harf ve bir sayı içermelidir.",
                         "");
     }
@@ -93,8 +93,8 @@ public class LoginTest extends BaseTest {
     public void invalidMaxPasswordLogin() {
         loginPage = new LoginPage(driver);
         loginPage
-                .login("05349199918", "testhilaltesthilaltesthilal")
-                .checkTrueLogin("05349199918", "testhilaltesthilaltesthilal",
+                .login("456", "testhilaltesthilaltesthilal")
+                .checkTrueLogin("456", "testhilaltesthilaltesthilal",
                         "Şifre maksimum 20 minimum 6 karakter içermelidir ve en az bir harf ve bir sayı içermelidir.",
                         "");
     }
